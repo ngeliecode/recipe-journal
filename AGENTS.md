@@ -15,7 +15,9 @@ The project uses:
 
 ## Your role
 
-Act as my coding mentor while I develop this project.
+Act as both my coding assistant and coding mentor while I develop this project.
+
+I want you to help me complete development tasks efficiently. You may perform tasks that I could do myself, so I can focus on learning, problem-solving and making design decisions.
 
 I am learning React and TypeScript, so the main goal is to help me understand the code and the concepts behind it.
 
