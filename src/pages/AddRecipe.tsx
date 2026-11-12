@@ -1,5 +1,5 @@
 const AddRecipe = () => {
-  return <div>Add recipe</div>
+  return <h1>Add recipe</h1>
 }
 
 export default AddRecipe
