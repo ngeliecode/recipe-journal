@@ -1,7 +1,7 @@
 import { useParams } from 'react-router'
 import { useRecipe } from '../hooks/useRecipe'
 
-const RecipeDetails = () => {
+const Recipe = () => {
   const { id } = useParams()
   const { recipe, loading, error } = useRecipe(id)
 
@@ -12,4 +12,4 @@ const RecipeDetails = () => {
   return <h1>{recipe.title}</h1>
 }
 
-export default RecipeDetails
+export default Recipe
