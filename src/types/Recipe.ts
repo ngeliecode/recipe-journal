@@ -1,7 +1,9 @@
 export type Recipe = {
   id: string
   title: string
-  status: 'Want to make' | 'Made' | 'Archived'
+  subtitle?: string
+  category: 'Favorite' | 'Archived' | ''
+  status: 'Want to make' | 'Made'
   imageUrl?: string
   notes?: string
   tags?: string[]
