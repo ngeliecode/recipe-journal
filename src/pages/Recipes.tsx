@@ -4,13 +4,9 @@ import { Link } from 'react-router'
 const Recipes = () => {
   const { recipes, loading, error } = useRecipes()
 
-  if (loading) {
-    return <p>Loading...</p>
-  }
-
-  if (error) {
-    return <p>{error}</p>
-  }
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>{error}</p>
+  if (!recipes.length) return <p>No recipes found</p>
 
   return (
     <>
