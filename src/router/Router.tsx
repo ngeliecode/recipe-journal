@@ -3,7 +3,7 @@ import AppLayout from '../layouts/AppLayout'
 import AddRecipe from '../pages/AddRecipe'
 import Home from '../pages/Home'
 import NotFound from '../pages/NotFound'
-import RecipeDetails from '../pages/RecipeDetails'
+import Recipe from '../pages/Recipe'
 import Recipes from '../pages/Recipes'
 
 const Router = () => (
@@ -12,7 +12,7 @@ const Router = () => (
       <Route path="/" element={<Home />} />
       <Route path="/recipes" element={<Recipes />} />
       <Route path="/recipes/add" element={<AddRecipe />} />
-      <Route path="/recipes/:id" element={<RecipeDetails />} />
+      <Route path="/recipes/:id" element={<Recipe />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   </Routes>
