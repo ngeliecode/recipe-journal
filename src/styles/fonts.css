@@ -1,0 +1,41 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/roboto-mono-v31-latin-regular.woff2')
+    format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/roboto-serif-v17-latin-regular.woff2')
+    format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto Serif';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../assets/fonts/roboto-serif-v17-latin-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Calistoga';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/calistoga-v18-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/inter-v20-latin-regular.woff2') format('woff2');
+}

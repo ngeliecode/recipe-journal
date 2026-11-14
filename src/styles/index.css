@@ -1,0 +1,28 @@
+@import './fonts.css';
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-serif);
+}
+
+/* Variables */
+:root {
+  --font-mono: 'Roboto Mono', monospace;
+  --font-serif: 'Roboto Serif', serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-fluid: 'Calistoga', 'Inter', serif;
+  --font-header: 'Roboto Serif', 'Calistoga', serif;
+}
