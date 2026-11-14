@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router'
-import { useAddRecipe } from '../hooks/useAddRecipe'
+import { useAddRecipe } from '../hooks/useRecipes'
 import RecipeForm from '../components/RecipeForm'
 
 const AddRecipe = () => {

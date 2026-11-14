@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router'
-import { useRecipe } from '../hooks/useRecipe'
-import { useUpdateRecipe } from '../hooks/useUpdateRecipe'
-import { useDeleteRecipe } from '../hooks/useDeleteRecipe'
 import StatusSelector from '../components/StatusSelector'
 import RecipeActions from '../components/RecipeActions'
+import {
+  useRecipe,
+  useUpdateRecipe,
+  useDeleteRecipe,
+} from '../hooks/useRecipes'
 
 const Recipe = () => {
   const { id } = useParams()
