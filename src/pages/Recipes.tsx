@@ -1,45 +1,49 @@
-import { useRecipes } from '../hooks/useRecipes'
-import { useDeleteRecipe } from '../hooks/useDeleteRecipe'
+import { useState } from 'react'
 import { Link } from 'react-router'
+import { useRecipes } from '../hooks/useRecipes'
 
 const Recipes = () => {
-  const { recipes, setRecipes, loading, error } = useRecipes()
-  const {
-    deleteRecipe,
-    loading: deleting,
-    error: deleteError,
-  } = useDeleteRecipe()
+  const [activeFilter, setActiveFilter] = useState('All')
+
+  const { recipes, loading, error } = useRecipes()
 
   if (loading) return <p>Loading...</p>
   if (error) return <p>{error}</p>
   if (!recipes.length) return <p>No recipes found</p>
 
-  const handleDelete = async (id: string) => {
-    const deleted = await deleteRecipe(id)
+  const filters = ['All', 'Want to make', 'Favourites', 'Archived', 'Made']
 
-    if (deleted) {
-      setRecipes((prevRecipes) =>
-        prevRecipes.filter((recipe) => recipe.id !== id),
-      )
-    }
-  }
+  const filteredRecipes = recipes.filter((recipe) => {
+    if (activeFilter === 'All') return true
+    if (activeFilter === 'Favourites') return recipe.category === 'Favorite'
+    if (activeFilter === 'Archived') return recipe.category === 'Archived'
+
+    return recipe.status === activeFilter
+  })
 
   return (
     <>
       <h1>Recipe collection</h1>
 
-      {recipes.map((recipe) => (
+      <div className="filters">
+        {filters.map((filter) => (
+          <button
+            key={filter}
+            className={activeFilter === filter ? 'active' : ''}
+            onClick={() => setActiveFilter(filter)}
+          >
+            {filter}
+          </button>
+        ))}
+      </div>
+
+      {filteredRecipes.map((recipe) => (
         <div key={recipe.id}>
           <h2>{recipe.title}</h2>
           <p>{recipe.tags?.join(', ')}</p>
           <Link to={`/recipes/${recipe.id}`}>View recipe</Link>
-          <button onClick={() => handleDelete(recipe.id)} disabled={deleting}>
-            Delete
-          </button>
         </div>
       ))}
-
-      {deleteError && <p>{deleteError}</p>}
     </>
   )
 }

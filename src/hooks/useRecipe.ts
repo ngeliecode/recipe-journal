@@ -31,5 +31,5 @@ export const useRecipe = (id: string) => {
     fetchRecipeById()
   }, [id])
 
-  return { recipe, loading, error }
+  return { recipe, setRecipe, loading, error }
 }
