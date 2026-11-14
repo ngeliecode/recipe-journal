@@ -31,12 +31,14 @@ export const useRecipes = () => {
   return { recipes, setRecipes, loading, error }
 }
 
-export const useRecipe = (id: string) => {
+export const useRecipe = (id: string | undefined) => {
   const [recipe, setRecipe] = useState<Recipe | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
+    if (!id) return
+
     const fetchRecipeById = async () => {
       setLoading(true)
       setError(null)
