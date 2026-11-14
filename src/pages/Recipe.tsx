@@ -1,7 +1,8 @@
+import { useState } from 'react'
 import { useParams } from 'react-router'
 import { useRecipe } from '../hooks/useRecipe'
 import { useUpdateRecipe } from '../hooks/useUpdateRecipe'
-import { useState } from 'react'
+import StatusSelector from '../components/StatusSelector'
 
 const Recipe = () => {
   const { id } = useParams()
@@ -34,6 +35,14 @@ const Recipe = () => {
     <>
       <h1>{newTitle || recipe.title}</h1>
 
+      <StatusSelector
+        status={recipe.status}
+        onChange={(status) => {
+          if (!id) return
+          updateRecipe(id, { status })
+        }}
+      />
+
       <label htmlFor="newTitle">New recipe name</label>
       <input
         type="text"
@@ -46,7 +55,6 @@ const Recipe = () => {
         Update recipe
       </button>
 
-      {updating && <p>Updating recipe...</p>}
       {updateError && <p>{updateError}</p>}
     </>
   )
