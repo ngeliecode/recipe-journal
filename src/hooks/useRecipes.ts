@@ -28,5 +28,5 @@ export const useRecipes = () => {
     fetchRecipes()
   }, [])
 
-  return { recipes, loading, error }
+  return { recipes, setRecipes, loading, error }
 }
