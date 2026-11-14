@@ -1,9 +1,12 @@
-import { useState } from 'react'
 import { Link } from 'react-router'
 import { useRecipes } from '../hooks/useRecipes'
+import { useLocalStorage } from '../hooks/useLocalStorage'
 
 const Recipes = () => {
-  const [activeFilter, setActiveFilter] = useState('All')
+  const [activeFilter, setActiveFilter] = useLocalStorage(
+    'recipe-filter',
+    'All',
+  )
 
   const { recipes, loading, error } = useRecipes()
 
