@@ -25,4 +25,13 @@ body {
   --font-sans: 'Inter', sans-serif;
   --font-fluid: 'Calistoga', 'Inter', serif;
   --font-header: 'Roboto Serif', 'Calistoga', serif;
+
+  --color-espresso: #1e0a0f;
+  --color-raspberry: #89162d;
+  --color-vintage-wine: #431621;
+  --color-blue-sea: #90adbf;
+  --color-buttercup: #ffef5d;
+  --color-pearl: #eeeeee;
+  --color-cream: #ede1d1;
+  --color-pure-white: #ffffff;
 }
